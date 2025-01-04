@@ -1,5 +1,4 @@
 
-```markdown
 # Audio-Image Steganography Suite
 
 **Audio-Image Steganography Suite** is a Flask-based web application that enables secure communication by embedding images into audio files and encoding messages within images. It supports encryption, decryption, and retrieval of hidden data with ease.
@@ -30,7 +29,6 @@
 
 ## 🗂️ Project Structure
 
-```
 .
 ├── app.py                  # Main Flask application
 ├── templates/
@@ -42,7 +40,6 @@
 ├── audio/                  # Folder for audio files
 ├── requirements.txt        # Project dependencies
 └── README.md               # Project documentation
-```
 
 ---
 
