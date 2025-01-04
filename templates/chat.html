@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dual Layer Steganography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .chat-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .text-message {
+            background-color: #e6f2ff;
+        }
+        .image-message {
+            background-color: #e6ffe6;
+        }
+        .audio-message {
+            background-color: #fff2e6;
+        }
+        .error-message {
+            background-color: #ffe6e6;
+            color: red;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        input, button {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dual Layer Steganography Chat</h1>
+    
+    <div class="chat-box">
+        {% for msg in messages %}
+            {% if msg.type == 'text' %}
+                <div class="message text-message">
+                    <strong>Text Message:</strong> {{ msg.content }}
+                </div>
+            {% elif msg.type == 'image' %}
+                <div class="message image-message">
+                    <strong>Image with Hidden Message:</strong> 
+                    <a href="{{ url_for('download', filename=msg.content) }}">Download  Image</a>
+                </div>
+            {% elif msg.type == 'audio' %}
+                <div class="message audio-message">
+                    <strong>Stego Audio:</strong> 
+                    <a href="{{ url_for('download_audio', filename=msg.content) }}">Download Stego Audio</a>
+                    <br>
+                    <strong>Original Hidden Image:</strong> 
+                    <a href="{{ url_for('download', filename=msg.original_image) }}">Download Original Image</a>
+                </div>
+            {% elif msg.type == 'error' %}
+                <div class="message error-message">
+                    <strong>Error:</strong> {{ msg.content }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <form action="{{ url_for('chat') }}" method="post">
+        <label for="message">Send Text Message:</label>
+        <input type="text" id="message" name="message" placeholder="Enter your message">
+        <button type="submit">Send Text</button>
+    </form>
+
+    <form action="{{ url_for('chat') }}" method="post" enctype="multipart/form-data">
+        <h3>Encode Message in Image</h3>
+        <label for="image">Select Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        
+        <label for="encode_message">Message to Hide:</label>
+        <input type="text" id="encode_message" name="encode_message" required>
+        
+        <label for="audio">Optional Audio File (WAV):</label>
+        <input type="file" id="audio" name="audio" accept=".wav">
+        
+        <button type="submit">Encode & Hide</button>
+    </form>
+
+    <form action="{{ url_for('decode') }}" method="post" enctype="multipart/form-data">
+        <h3>Decode Message from Image</h3>
+        <label for="encrypted_image">Upload Encrypted Image:</label>
+        <input type="file" id="encrypted_image" name="encrypted_image" accept="image/*" required>
+        <button type="submit">Decode Image Message</button>
+    </form>
+
+    <form action="{{ url_for('decode_audio') }}" method="post" enctype="multipart/form-data">
+        <h3>Decode Message from Audio</h3>
+        <label for="stego_audio">Upload Stego Audio (WAV):</label>
+        <input type="file" id="stego_audio" name="stego_audio" accept=".wav" required>
+        <button type="submit">Decode Audio Steganography</button>
+    </form>
+</body>
+</html>
