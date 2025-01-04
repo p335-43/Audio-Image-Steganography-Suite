@@ -1,9 +1,10 @@
-Here’s a detailed `README.md` file for your project:
 
 ```markdown
 # Audio-Image Steganography Suite
 
 **Audio-Image Steganography Suite** is a Flask-based web application that enables secure communication by embedding images into audio files and encoding messages within images. It supports encryption, decryption, and retrieval of hidden data with ease.
+
+---
 
 ## 🚀 Features
 
@@ -35,6 +36,7 @@ Here’s a detailed `README.md` file for your project:
 ├── templates/
 │   ├── chat.html           # Chat interface for interaction
 │   ├── decode_result.html  # Result page for decoded media
+├── static/                 # Folder for static files (CSS, JS)
 ├── uploads/                # Folder for uploaded files
 ├── encrypted/              # Folder for encrypted files
 ├── audio/                  # Folder for audio files
@@ -129,5 +131,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [Pillow Documentation](https://pillow.readthedocs.io/)
 - [NumPy Documentation](https://numpy.org/doc/)
+```
 
----
+Let me know if you need help refining specific sections or with the actual implementation.
