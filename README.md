@@ -28,26 +28,25 @@
 ---
 
 ## 🗂️ Project Structure
-
+```
 .
-├── app.py                  # Main Flask application
+├── run.py                  # Main Flask application
 ├── templates/
 │   ├── chat.html           # Chat interface for interaction
 │   ├── decode_result.html  # Result page for decoded media
-├── static/                 # Folder for static files (CSS, JS)
 ├── uploads/                # Folder for uploaded files
 ├── encrypted/              # Folder for encrypted files
 ├── audio/                  # Folder for audio files
 ├── requirements.txt        # Project dependencies
 └── README.md               # Project documentation
-
+```
 ---
 
 ## 🛠️ Setup & Installation
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/your-username/Audio-Image-Stego-Suite.git
+   git clone https://github.com/p335-43/AudioImage-Stego-Suite.git
    cd Audio-Image-Stego-Suite
    ```
 
@@ -60,7 +59,7 @@
 3. **Run the Application**  
    Start the Flask development server:
    ```bash
-   python app.py
+   python run.py
    ```
 
 4. **Access the Application**  
@@ -81,14 +80,6 @@
 
 ---
 
-## 📂 Examples
-
-- **Encrypted Image Example**:  
-  ![Example Encrypted Image](path/to/example-encrypted-image.png)
-- **Decoded Message Example**:  
-  "Hello, this is a secret!"
-
----
 
 ## 🔒 Security Features
 
@@ -97,31 +88,6 @@
 
 ---
 
-## 🧑‍💻 Contributing
-
-We welcome contributions to enhance this project! Please follow these steps:
-1. Fork the repository.
-2. Create a feature branch:  
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:  
-   ```bash
-   git commit -m "Add feature description"
-   ```
-4. Push to the branch:  
-   ```bash
-   git push origin feature-name
-   ```
-5. Create a pull request.
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
 
 ## 🌟 Acknowledgments
 
@@ -129,5 +95,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [Pillow Documentation](https://pillow.readthedocs.io/)
 - [NumPy Documentation](https://numpy.org/doc/)
 ```
-
-Let me know if you need help refining specific sections or with the actual implementation.

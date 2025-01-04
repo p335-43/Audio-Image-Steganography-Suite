@@ -1,0 +1,7 @@
+Flask==3.0.0
+Werkzeug==3.0.1
+Pillow==10.1.0
+numpy==1.26.2
+pyOpenSSL==23.3.0  # For ssl_context='adhoc'
+uuid==1.30
+wave==0.0.2
