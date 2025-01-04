@@ -94,4 +94,3 @@
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [Pillow Documentation](https://pillow.readthedocs.io/)
 - [NumPy Documentation](https://numpy.org/doc/)
-```
